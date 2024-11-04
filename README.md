@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Estate Settlement React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This project is a React-based frontend application designed for estate settlement purposes. It allows users to create, view, update, and delete assets associated with an estate. The app interfaces with a Ruby on Rails backend API, providing a structured environment for managing estate assets after a relative has passed away. This project is part of the CS-130 course.
 
-## Available Scripts
+## Features
+1. **View Assets**: 
+   - The application displays a list of assets with relevant details such as name, description, category, acquisition date, and location.
+   - Each asset includes buttons for tracking its status: **Inventory**, **Value**, **Marshal**, and **Administer**.
 
-In the project directory, you can run:
+2. **Add New Assets**:
+   - Users can create new assets via a modal form, specifying details such as name, category (from a dropdown list of pre-defined categories), acquisition date, location, and description.
+   - This form does not require a status input, as the status is tracked internally based on user actions.
 
-### `npm start`
+3. **Edit Existing Assets**:
+   - Users can click on an asset's name to open a modal for editing its details.
+   - The modal includes options to **Save** the updates, **Delete** the asset, or **Close** without changes.
+   - Each update is intended to be synced with the backend database, though updates to this functionality may be ongoing.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. **Delete Assets**:
+   - Users have the option to delete assets either directly from the asset list or through the edit modal. Deletions are synced with the backend.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Current Setup
+- **Frontend**: Built with React and styled using Bootstrap for a responsive UI.
+- **Backend API**: Connects to a Rails API that manages asset data, including creating, updating, and deleting assets in the database.
+- **API Endpoints**:
+  - `GET /api/v1/assets` - Retrieve all assets.
+  - `POST /api/v1/assets` - Create a new asset.
+  - `PATCH /api/v1/assets/:id` - Update an asset’s information.
+  - `DELETE /api/v1/assets/:id` - Delete an asset.
 
-### `npm test`
+## Technologies Used
+- **React**: Core frontend library.
+- **Bootstrap**: For styling and UI components.
+- **Axios**: For making API calls to the backend.
+- **Ruby on Rails**: Backend server (API mode) for managing data storage and retrieval.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
+- `src/components/`: Contains all major React components:
+  - `AssetList.js`: Displays the list of assets with controls for each.
+  - `NewAssetModal.js`: Form modal for adding a new asset.
+  - `AssetModal.js`: Modal for editing an asset's information.
+- `src/services/api.js`: Contains API request functions for interacting with the Rails backend.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Setup Instructions
+1. **Install dependencies**:
+   ```bash
+   npm install
