@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { getAssets, createAsset, deleteAsset, updateAsset } from '../services/api';
 import AssetModal from './AssetModal';
 import NewAssetModal from './NewAssetModal';
+import Header from './Header';
 
 function AssetList() {
   const [assets, setAssets] = useState([]);
@@ -42,7 +43,9 @@ function AssetList() {
   };
 
   return (
+    
     <div className="container">
+      <Header />
       <h1 className="display-4 mb-4">Assets</h1>
 
       <button

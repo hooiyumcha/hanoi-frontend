@@ -1,34 +1,12 @@
 // src/components/HomePage.js
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/home.css'; // Import the CSS for styling
+import Header from './Header'; // Import the new Header component
+import '../styles/home.css';
 
 function HomePage() {
   return (
     <div className="home-page">
-      {/* Header */}
-      <header className="header">
-        <div className="logo">
-          {/* Logo text only */}
-          <div className="hanoi">hanoi</div>
-        </div>
-        <div className="user-info">
-          {/* Username text only */}
-          <div className="username">Chief Choctaw</div>
-        </div>
-      </header>
-
-      {/* Secondary Navigation */}
-      <div className="secondary-header">
-        <nav className="secondary-nav">
-          <ul className="secondary-nav-list">
-            <li><Link to="/" className="secondary-nav-item">Home</Link></li>
-            <li><Link to="/assets" className="secondary-nav-item">Assets</Link></li>
-            <li><a href="#" className="secondary-nav-item">Debts</a></li>
-            <li><a href="#" className="secondary-nav-item">Documents</a></li>
-          </ul>
-        </nav>
-      </div>
+      <Header /> {/* Use the Header component */}
 
       {/* Progress Bar */}
       <div className="progress-bar">
